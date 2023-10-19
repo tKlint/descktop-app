@@ -13,8 +13,10 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
-      "*": ["node_modules/*"]
+      "@/*": ["src/*"],
+      "@": ["src"],
+      "@v": ["src/views"],
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src"],
 }

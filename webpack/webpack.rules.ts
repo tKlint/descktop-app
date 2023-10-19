@@ -37,6 +37,17 @@ export const rules: Required<ModuleOptions>['rules'] = [
         presets: ['@babel/preset-react']
       }
     }
+  },
+  {
+    test: /\.(png|jpe?g|gif|svg)$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]'
+        }
+      }
+    ]
   }
 ];
 

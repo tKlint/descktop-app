@@ -1,7 +1,10 @@
 import type { Configuration } from 'webpack';
-
+import path from 'path';
+import fs from 'fs'
 import { rules } from './webpack.rules';
 import { plugins } from './webpack.plugins';
+
+const appDirectory = fs.realpathSync(process.cwd());
 
 rules.push({
   test: /\.css$/,
@@ -15,5 +18,8 @@ export const rendererConfig: Configuration = {
   plugins,
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
+    alias: {
+      '@': path.resolve(appDirectory, 'src'),
+    }
   },
 };
